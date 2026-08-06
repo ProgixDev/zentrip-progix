@@ -48,28 +48,22 @@ export function BodySections() {
         <div className={styles.container}>
           <SectionHeader num="01 — OBJET" title="Objet du devis" />
           <p className={styles.pLead}>
-            Le présent devis contractuel (le « Devis ») définit les modalités selon lesquelles{" "}
-            <Strong>Progix Inc.</Strong> (le « Prestataire ») s’engage à concevoir, développer,
-            déployer et accompagner commercialement <Strong>ZenTrip</Strong> (l’« Application »),
+            Le présent devis contractuel (le « Devis ») engage <Strong>Progix Inc.</Strong> (le «
+            Prestataire ») à concevoir, développer, déployer et accompagner commercialement{" "}
+            <Strong>ZenTrip</Strong> (l’« Application ») pour le client signataire (le « Client ») :
             une{" "}
             <Strong>
-              application mobile et web de planification de road trip assistée par intelligence
-              artificielle
+              application mobile et web de planification de road trip par intelligence artificielle
             </Strong>
-            , pour le compte du client signataire (le « Client »). À partir d’une simple description
-            en langage naturel, l’Application génère un <Strong>itinéraire complet</Strong>, un{" "}
-            <Strong>budget prévisionnel</Strong>, une <Strong>checklist personnalisée</Strong> et
-            des <Strong>alternatives comparées</Strong>, puis accompagne le voyageur pendant tout
-            son trajet et conserve le souvenir du voyage.
+            . Le voyageur décrit son projet en quelques phrases ; l’Application produit{" "}
+            <Strong>itinéraire</Strong>, <Strong>budget</Strong>, <Strong>checklist</Strong> et{" "}
+            <Strong>alternatives comparées</Strong>, puis l’accompagne jusqu’au retour.
           </p>
           <p className={styles.p}>
-            Le présent Devis couvre la conception technique, le développement complet, le moteur
-            d’intelligence artificielle, la cartographie adaptée au gabarit du véhicule,
-            l’infrastructure cloud, les applications mobiles iOS et Android, l’application web, le
-            portail d’administration, la mise en ligne, l’accompagnement marketing et le support
-            post-livraison. Le périmètre fonctionnel et technique détaillé fait l’objet du{" "}
-            <DocRef>cahier des charges</DocRef> associé, qui complète le présent Devis. La signature
-            du présent document vaut acceptation ferme de l’ensemble des conditions qui y figurent.
+            Sont couverts : conception, développement, moteur IA, cartographie au gabarit,
+            infrastructure cloud, applications iOS, Android et web, portail d’administration, mise
+            en ligne, marketing et support. Le périmètre détaillé figure au{" "}
+            <DocRef>cahier des charges</DocRef> associé. La signature vaut acceptation ferme.
           </p>
           <div className={styles.trust}>
             {trust.map((t) => (
@@ -88,9 +82,9 @@ export function BodySections() {
           <SectionHeader
             num="02 — PRESTATIONS"
             title="Tout ce qui est inclus"
-            lead="Une prestation complète, de la conception technique jusqu’au lancement commercial : le planificateur intelligent, le copilote en voyage, les modules budget, checklist et véhicule, l’infrastructure, le déploiement sur les stores, le marketing et le support. Rien à gérer en plus."
+            lead="De la conception au lancement commercial : planificateur intelligent, copilote en voyage, budget, checklist, véhicule, infrastructure, déploiement, marketing et support. Rien à gérer en plus."
           />
-          <SubHeading first>Profils voyageur & véhicule — création d’un voyage</SubHeading>
+          <SubHeading first>Profils voyageur & véhicule : création d’un voyage</SubHeading>
           <CheckList items={incl1} />
           <SubHeading>Planificateur intelligent & recommandations</SubHeading>
           <CheckList items={incl2} />
@@ -115,7 +109,7 @@ export function BodySections() {
           <SectionHeader
             num="03 — INVESTISSEMENT"
             title="Votre investissement"
-            lead="Un montant total de 6 400 €, réglé en 3 versements : 30 % à la signature, 50 % à la validation du planificateur et 20 % à la livraison. Il comprend l’ensemble des prestations ci-dessous : développement complet, moteur IA, cartographie, infrastructure, déploiement sur les stores, accompagnement marketing de 90 jours, documentation et support."
+            lead="6 400 € au total, réglés en 3 versements : 30 % à la signature, 50 % à la validation du planificateur, 20 % à la livraison. Tout est compris, sans supplément."
           />
           <div className={styles.tableWrap}>
             <table className={styles.table}>
@@ -143,7 +137,7 @@ export function BodySections() {
                 ))}
                 <tr className={styles.tableTotal}>
                   <td>
-                    <strong>TOTAL — 30 % / 50 % / 20 %</strong>
+                    <strong>TOTAL · 30 % / 50 % / 20 %</strong>
                   </td>
                   <td className={styles.tableTotalAmount}>6 400 €</td>
                 </tr>
@@ -158,18 +152,17 @@ export function BodySections() {
               <div className={styles.totalEyebrow}>Investissement · montant total</div>
               <div className={styles.totalValue}>6 400 €</div>
               <div className={styles.totalNote}>
-                Réglé en <Strong>3 versements — 30 %, 50 % et 20 %</Strong>, développement complet,
+                Réglé en <Strong>3 versements : 30 %, 50 % et 20 %</Strong>, développement complet,
                 déploiement et accompagnement marketing compris. Prix ferme, aucun coût caché.
               </div>
             </div>
           </div>
           <InfoBox icon="€" title="Aucune taxe applicable">
-            Service international fourni par une société <Strong>canadienne</Strong> : la prestation
-            n’est pas assujettie à la TVA ni à aucune taxe de vente (service transfrontalier —
-            autoliquidation par le preneur le cas échéant).{" "}
-            <Strong>Le montant de 6 400 € correspond au montant net à payer.</Strong>
+            Prestation internationale fournie par une société <Strong>canadienne</Strong> : ni TVA
+            ni taxe de vente (service transfrontalier, autoliquidation par le preneur le cas
+            échéant). <Strong>6 400 € est le net à payer.</Strong>
           </InfoBox>
-          <SubHeading>Échéancier de paiement — 3 versements</SubHeading>
+          <SubHeading>Échéancier de paiement en 3 versements</SubHeading>
           <div className={styles.grid3} style={{ margin: "6px 0 16px" }}>
             {payments.map((p) => (
               <div key={p.pct} className={cn(styles.payCard, styles.lift)}>
@@ -181,23 +174,17 @@ export function BodySections() {
             ))}
           </div>
           <p style={{ fontSize: "13px", color: "var(--slate)", margin: 0, lineHeight: 1.6 }}>
-            Le montant total de <Strong>6 400 €</Strong> est réglé en <Strong>3 versements</Strong>{" "}
-            : <Strong>30 % (1 920 €) à la signature</Strong>,{" "}
-            <Strong>50 % (3 200 €) à la validation du planificateur</Strong> — fin de la phase 2 —
-            et <Strong>20 % (1 280 €) à la livraison</Strong>, après publication sur les stores.
-            Paiement par <Strong>Stripe</Strong>, <Strong>virement bancaire</Strong> ou{" "}
-            <Strong>Interac</Strong> (si applicable).{" "}
-            <Strong>
-              Aucun travail de développement ne débute avant réception du premier versement.
-            </Strong>
+            <Strong>1 920 €</Strong> à la signature, <Strong>3 200 €</Strong> à la validation du
+            planificateur (fin de phase 2), <Strong>1 280 €</Strong> à la livraison. Paiement par{" "}
+            <Strong>Stripe</Strong>, <Strong>virement</Strong> ou <Strong>Interac</Strong>.{" "}
+            <Strong>Aucun développement ne débute avant le premier versement.</Strong>
           </p>
           <InfoBox icon="i" title="Coûts récurrents des services tiers">
-            ZenTrip s’appuie sur des services tiers facturés à l’usage —{" "}
-            <Strong>API d’intelligence artificielle</Strong>, <Strong>cartographie</Strong>,{" "}
-            <Strong>météo</Strong> et <Strong>bases d’hébergements</Strong>. Ces abonnements sont
-            souscrits <Strong>au nom du Client</Strong>, restent sa propriété et sont{" "}
-            <Strong>distincts du présent Devis</Strong>. Progix configure les intégrations, optimise
-            la consommation et documente les coûts, mais ne perçoit aucune commission dessus.
+            ZenTrip consomme des services facturés à l’usage : <Strong>IA</Strong>,{" "}
+            <Strong>cartographie</Strong>, <Strong>météo</Strong>,{" "}
+            <Strong>bases d’hébergements</Strong>. Ces abonnements sont souscrits{" "}
+            <Strong>au nom du Client</Strong> et <Strong>distincts du présent Devis</Strong>. Progix
+            les configure, optimise la consommation et documente les coûts, sans commission.
           </InfoBox>
         </div>
       </section>
@@ -207,8 +194,8 @@ export function BodySections() {
         <div className={styles.container}>
           <SectionHeader
             num="04 — MARKETING"
-            title="Accompagnement marketing premium — 90 jours inclus"
-            lead="Le forfait comprend un accompagnement marketing complet de 90 jours pour lancer ZenTrip auprès de la communauté camping-car, van et fourgon aménagé. Progix intervient en qualité de gestionnaire des campagnes ; les comptes publicitaires restent la propriété du Client et les dépenses publicitaires sont facturées directement par les plateformes."
+            title="Accompagnement marketing premium, 90 jours inclus"
+            lead="90 jours pour lancer ZenTrip auprès de la communauté camping-car et van. Progix pilote les campagnes ; les comptes publicitaires restent au Client et les plateformes le facturent directement."
           />
           <div className={styles.grid2}>
             <div className={cn(styles.card, styles.lift)}>
@@ -219,9 +206,8 @@ export function BodySections() {
                 Stratégie
               </h3>
               <p className={styles.cardText}>
-                Étude du marché du <Strong>road trip</Strong>, positionnement de ZenTrip et
-                stratégie d’acquisition des premiers voyageurs — propriétaires de{" "}
-                <Strong>camping-cars, vans et fourgons aménagés</Strong>.
+                Marché du <Strong>road trip</Strong>, positionnement et acquisition des premiers
+                voyageurs en <Strong>camping-car, van et fourgon aménagé</Strong>.
               </p>
             </div>
             <div className={cn(styles.card, styles.lift)}>
@@ -264,17 +250,14 @@ export function BodySections() {
             </div>
           </div>
           <InfoBox variant="ok" icon="★" title="90 jours d’accompagnement inclus">
-            L’accompagnement marketing couvre <Strong>90 jours</Strong> à compter du lancement :
-            stratégie, création publicitaire, gestion des campagnes, optimisation quotidienne,
-            reporting continu et réunions de suivi — inclus dans le forfait, sans coût
-            supplémentaire.
+            <Strong>90 jours</Strong> à compter du lancement : stratégie, créations, gestion des
+            campagnes, optimisation quotidienne, reporting et réunions de suivi. Inclus dans le
+            forfait, sans supplément.
           </InfoBox>
           <p className={styles.note}>
-            Le Client s’engage à prévoir un budget média minimal de <Strong>2 200 €</Strong>,
-            investi directement dans ses comptes publicitaires ; il est{" "}
-            <Strong>distinct du présent devis</Strong> et directement dépensé sur les plateformes
-            publicitaires (Meta, Google, Apple…). Progix ne perçoit aucune commission sur les
-            budgets publicitaires.
+            Budget média minimal de <Strong>2 200 €</Strong> à prévoir par le Client, investi dans
+            ses propres comptes (Meta, Google, Apple) et <Strong>distinct du présent devis</Strong>.
+            Progix ne prend aucune commission dessus.
           </p>
         </div>
       </section>
@@ -284,14 +267,14 @@ export function BodySections() {
         <div className={styles.container}>
           <SectionHeader num="05 — APRÈS-LIVRAISON" title="Support, propriété & documentation" />
           <InfoBox variant="ok" icon="★" title="Vous êtes propriétaire à 100 %">
-            Le Client devient propriétaire des développements réalisés : la propriété intellectuelle
-            est <Strong>transférée progressivement à mesure des paiements</Strong>. À paiement
-            complet, le <Strong>code source</Strong>, la <Strong>base de données</Strong>, les{" "}
-            <Strong>maquettes</Strong>, la <Strong>documentation</Strong> et l’
-            <Strong>architecture</Strong> appartiennent au Client —{" "}
-            <Strong>aucun verrouillage.</Strong>
+            La propriété intellectuelle est{" "}
+            <Strong>transférée progressivement à mesure des paiements</Strong>. À paiement complet,{" "}
+            <Strong>code source</Strong>, <Strong>base de données</Strong>,{" "}
+            <Strong>maquettes</Strong>, <Strong>documentation</Strong> et{" "}
+            <Strong>architecture</Strong> appartiennent au Client.{" "}
+            <Strong>Aucun verrouillage.</Strong>
           </InfoBox>
-          <SubHeading>Support inclus — 90 jours</SubHeading>
+          <SubHeading>Support inclus pendant 90 jours</SubHeading>
           <ul className={styles.arrowList}>
             <li className={styles.arrowItem}>
               <Strong>Corrections de bugs</Strong> et ajustements mineurs (hors nouvelles
@@ -314,9 +297,8 @@ export function BodySections() {
                 Documentation technique
               </h3>
               <p className={styles.cardText}>
-                Documentation complète de l’architecture, de l’API, de la base de données et des
-                intégrations tierces (IA, cartographie, météo, hébergements) — remise à la livraison
-                finale pour garantir l’autonomie du Client.
+                Architecture, API, base de données et intégrations tierces (IA, cartographie, météo,
+                hébergements), remises à la livraison pour garantir l’autonomie du Client.
               </p>
             </div>
             <div className={cn(styles.card, styles.lift)}>
@@ -332,13 +314,13 @@ export function BodySections() {
               </p>
             </div>
           </div>
-          <InfoBox icon="!" title="Recommandations de voyage — rôle d’assistant">
-            ZenTrip <Strong>recommande mais n’impose jamais</Strong> : la décision finale appartient
-            toujours au voyageur. L’Application <Strong>ne vérifie pas les documents</Strong> de
-            l’utilisateur et agit comme assistant en rappelant les formalités selon la destination.
-            Les informations réglementaires, sanitaires et de disponibilité proviennent de sources
-            tierces et sont fournies <Strong>à titre indicatif</Strong> ; Progix ne peut en garantir
-            l’exhaustivité ni l’exactitude permanente.
+          <InfoBox icon="!" title="Recommandations de voyage : rôle d’assistant">
+            ZenTrip <Strong>recommande mais n’impose jamais</Strong> : la décision finale revient au
+            voyageur. L’Application <Strong>ne vérifie pas les documents</Strong> et se borne à
+            rappeler les formalités selon la destination. Les informations réglementaires,
+            sanitaires et de disponibilité viennent de sources tierces et restent{" "}
+            <Strong>indicatives</Strong> ; Progix n’en garantit ni l’exhaustivité ni l’exactitude
+            permanente.
           </InfoBox>
         </div>
       </section>
@@ -349,7 +331,7 @@ export function BodySections() {
           <SectionHeader
             num="06 — DÉLAIS"
             title="Délais & phases de réalisation"
-            lead="Développement livré en 90 jours à compter de la date de démarrage, en 4 phases, suivi de 90 jours d’accompagnement marketing. Réalisation itérative, avec validation du Client à chaque étape clé. Le calendrier peut évoluer selon la rapidité des validations et les contraintes des services tiers."
+            lead="90 jours de développement en 4 phases, puis 90 jours de marketing. Réalisation itérative, validée par le Client à chaque étape clé. Le calendrier dépend de la rapidité des validations et des services tiers."
           />
           {/* 5 phases: widen the track so they lay out 3 + 2 rather than 4 + 1. */}
           <div
@@ -368,20 +350,16 @@ export function BodySections() {
             ))}
           </div>
           <InfoBox icon="i" title="Délais liés aux stores (hors de notre contrôle)">
-            Ce délai peut être prolongé lorsque l’<Strong>App Store</Strong> ou le{" "}
-            <Strong>Google Play Store</Strong> demandent des modifications, des validations
-            supplémentaires ou refusent une première soumission. Progix gère les refus éventuels,
-            applique les correctifs nécessaires et accompagne le Client{" "}
-            <Strong>jusqu’à validation</Strong> ; ces délais ne sont pas sous le contrôle de Progix.
+            L’<Strong>App Store</Strong> et le <Strong>Google Play Store</Strong> peuvent exiger des
+            modifications ou refuser une première soumission. Progix gère les refus, corrige et
+            accompagne <Strong>jusqu’à validation</Strong>, mais ne maîtrise pas ces délais.
           </InfoBox>
           <p className={styles.note}>
-            Le périmètre livré correspond aux <Strong>phases 1 et 2</Strong> du cahier des charges —
-            le planificateur intelligent et le copilote pendant le voyage. La{" "}
+            Le périmètre livré couvre les <Strong>phases 1 et 2</Strong> du cahier des charges
+            (planificateur intelligent et copilote en voyage). La{" "}
             <Strong>communauté ZenTrip</Strong> (phase 3) et l’
-            <Strong>expansion internationale</Strong> (phase 4) constituent des évolutions
-            ultérieures, hors du présent Devis. Tout retard du Client (validations, contenus, accès,
-            comptes tiers) peut entraîner un <Strong>report équivalent du calendrier</Strong> — voir
-            la section 07.
+            <Strong>expansion internationale</Strong> (phase 4) restent hors Devis. Tout retard du
+            Client entraîne un <Strong>report équivalent du calendrier</Strong> (section 07).
           </p>
         </div>
       </section>
@@ -393,56 +371,46 @@ export function BodySections() {
           <BadgeHeading badge="A" first>
             Ce que le Client fournit
           </BadgeHeading>
-          <p className={styles.p}>
-            Pour permettre la tenue du délai et la qualité de la livraison, le Client s’engage à :
-          </p>
+          <p className={styles.p}>Pour tenir le délai et la qualité, le Client s’engage à :</p>
           <ul className={styles.arrowList}>
             <li className={styles.arrowItem}>
-              Fournir les <Strong>validations nécessaires</Strong> et respecter les délais de
-              validation.
+              Donner ses <Strong>validations</Strong> dans les délais convenus.
             </li>
             <li className={styles.arrowItem}>
-              Fournir les <Strong>contenus requis</Strong> (textes, visuels, identité de marque,
-              informations commerciales) en temps utile.
+              Fournir les <Strong>contenus</Strong> (textes, visuels, identité de marque) en temps
+              utile.
             </li>
             <li className={styles.arrowItem}>
-              Créer les comptes <Strong>Apple Developer</Strong> (99 $/an) et{" "}
-              <Strong>Google Play Console</Strong> (25 $ une fois) et fournir les accès — Progix
-              accompagne la création et publie pour le Client.
+              Ouvrir les comptes <Strong>Apple Developer</Strong> (99 $/an) et{" "}
+              <Strong>Google Play Console</Strong> (25 $ une fois) et en donner les accès. Progix
+              accompagne la création et publie.
             </li>
             <li className={styles.arrowItem}>
-              Souscrire et maintenir les <Strong>abonnements aux services tiers</Strong> nécessaires
-              au fonctionnement de l’Application (API d’intelligence artificielle, cartographie,
-              météo, bases d’hébergements) et fournir les accès correspondants.
+              Souscrire les <Strong>abonnements aux services tiers</Strong> (IA, cartographie,
+              météo, hébergements) et fournir les accès, ainsi que les accès <Strong>Stripe</Strong>
+              .
             </li>
             <li className={styles.arrowItem}>
-              Fournir les accès <Strong>Stripe</Strong> nécessaires à l’intégration des abonnements
-              et des paiements.
+              Maintenir le <Strong>budget publicitaire minimum de 2 200 €</Strong> pendant
+              l’accompagnement.
             </li>
             <li className={styles.arrowItem}>
-              Prévoir et <Strong>maintenir le budget publicitaire minimum de 2 200 €</Strong> durant
-              l’accompagnement marketing.
-            </li>
-            <li className={styles.arrowItem}>
-              N’introduire <Strong>aucune nouvelle fonctionnalité</Strong> en cours de développement
-              : toute demande supplémentaire fait l’objet d’un avenant (révision des coûts et des
-              délais).
+              N’ajouter <Strong>aucune fonctionnalité</Strong> en cours de route : toute demande
+              supplémentaire passe par un avenant (coûts et délais révisés).
             </li>
           </ul>
           <BadgeHeading badge="B">Retards imputables au Client</BadgeHeading>
           <p className={styles.p}>
-            Tout retard du Client — absence de validation, de contenu ou d’accès, ou demandes de
-            modification — peut entraîner un <Strong>report équivalent du calendrier</Strong> de
-            livraison.
+            Une validation, un contenu ou un accès manquant, comme une demande de modification,
+            entraîne un <Strong>report équivalent du calendrier</Strong>.
           </p>
           <BadgeHeading badge="C">Dépendance aux services tiers</BadgeHeading>
           <p className={styles.p}>
-            Le fonctionnement de ZenTrip repose sur des <Strong>API et données tierces</Strong>{" "}
-            (intelligence artificielle, cartographie, météo, hébergements, réglementations). Une
-            modification de leurs conditions d’accès, de leurs tarifs, de la qualité ou de la
-            couverture de leurs données peut affecter certaines fonctionnalités. Progix sélectionne
-            les fournisseurs les plus fiables et adapte les intégrations, sans pouvoir garantir la
-            pérennité de services qu’elle ne contrôle pas.
+            ZenTrip repose sur des <Strong>API et données tierces</Strong> (IA, cartographie, météo,
+            hébergements, réglementations). Un changement de leurs conditions, tarifs ou couverture
+            peut affecter certaines fonctionnalités. Progix choisit les fournisseurs les plus
+            fiables et adapte les intégrations, sans garantir la pérennité de services qu’elle ne
+            contrôle pas.
           </p>
         </div>
       </section>

@@ -198,7 +198,7 @@ export function SignatureSection() {
         <div className={styles.formuleRecap}>
           <span>Offre retenue :</span>
           <span className={styles.formuleRecapValue}>
-            ZenTrip — planification de road trip par IA · 6 400 € (30 % / 50 % / 20 %)
+            ZenTrip : planification de road trip par IA · 6 400 € (30 % / 50 % / 20 %)
           </span>
         </div>
 
@@ -289,7 +289,7 @@ export function SignatureSection() {
                   aria-label="Zone de signature"
                 />
                 <div ref={hintRef} className={styles.signPadHint}>
-                  Signez ici — souris, stylet ou doigt
+                  Signez ici : souris, stylet ou doigt
                 </div>
               </div>
             </div>
@@ -297,7 +297,7 @@ export function SignatureSection() {
 
           {/* Le Prestataire — Progix Inc. */}
           <div className={styles.signProvider}>
-            <div className={styles.signKickerLabel}>Le Prestataire — Progix Inc.</div>
+            <div className={styles.signKickerLabel}>Le Prestataire · Progix Inc.</div>
             <div className={styles.signHint}>Pour Progix Inc.</div>
 
             <div className={styles.field}>
