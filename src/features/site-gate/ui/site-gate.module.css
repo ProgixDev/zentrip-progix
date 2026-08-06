@@ -95,6 +95,10 @@
   margin-bottom: 7px;
 }
 
+.inputWrap {
+  position: relative;
+}
+
 .input {
   width: 100%;
   font-family: var(--font-body), sans-serif;
@@ -121,6 +125,47 @@
 
 .inputError {
   border-color: #ff8a8a;
+}
+
+/* Leaves room for the reveal toggle so long passwords never slide under it. */
+.inputToggleable {
+  padding-right: 50px;
+}
+
+.toggle {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: #7fa6c8;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.toggle:hover {
+  color: #eaf1f9;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.toggle:focus-visible {
+  outline: none;
+  color: #eaf1f9;
+  box-shadow: 0 0 0 2px rgba(56, 182, 255, 0.6);
+}
+
+.toggle svg {
+  display: block;
 }
 
 .button {
@@ -170,7 +215,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .button,
-  .input {
+  .input,
+  .toggle {
     transition: none;
   }
 }

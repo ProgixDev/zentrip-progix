@@ -3,9 +3,43 @@
 import Image from "next/image";
 import { useState, useSyncExternalStore, type FormEvent } from "react";
 import { clientEnv } from "@/core/env.client";
+import { cn } from "@/lib/utils";
 import styles from "./site-gate.module.css";
 
 const STORAGE_KEY = "progix.gate.unlocked";
+
+/** Shared geometry for the two reveal-toggle glyphs. */
+const iconProps = {
+  width: 19,
+  height: 19,
+  viewBox: "0 0 20 20",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+} as const;
+
+function EyeIcon() {
+  return (
+    <svg {...iconProps}>
+      <path d="M1.8 10S5 4.4 10 4.4 18.2 10 18.2 10 15 15.6 10 15.6 1.8 10 1.8 10Z" />
+      <circle cx="10" cy="10" r="2.4" />
+    </svg>
+  );
+}
+
+function EyeOffIcon() {
+  return (
+    <svg {...iconProps}>
+      <path d="M8.3 4.6A7.9 7.9 0 0 1 10 4.4c5 0 8.2 5.6 8.2 5.6a15 15 0 0 1-2.6 3.3" />
+      <path d="M5.5 5.8A14.9 14.9 0 0 0 1.8 10S5 15.6 10 15.6a7.9 7.9 0 0 0 3.2-.7" />
+      <path d="M8.3 8.3a2.4 2.4 0 0 0 3.4 3.4" />
+      <path d="M3.2 3.2l13.6 13.6" />
+    </svg>
+  );
+}
 
 function subscribe(callback: () => void) {
   window.addEventListener("storage", callback);
@@ -37,6 +71,7 @@ export function SiteGate({ children }: { children: React.ReactNode }) {
   const [sessionUnlocked, setSessionUnlocked] = useState(false);
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   const unlocked = storedUnlocked || sessionUnlocked;
 
@@ -78,21 +113,34 @@ export function SiteGate({ children }: { children: React.ReactNode }) {
             <label className={styles.label} htmlFor="gate-password">
               Mot de passe
             </label>
-            <input
-              id="gate-password"
-              className={error ? `${styles.input} ${styles.inputError}` : styles.input}
-              type="password"
-              autoComplete="current-password"
-              autoFocus
-              value={value}
-              onChange={(event) => {
-                setValue(event.target.value);
-                if (error) setError(false);
-              }}
-              placeholder="••••••••"
-              aria-invalid={error}
-              aria-describedby="gate-error"
-            />
+            <div className={styles.inputWrap}>
+              <input
+                id="gate-password"
+                className={cn(styles.input, styles.inputToggleable, error && styles.inputError)}
+                type={revealed ? "text" : "password"}
+                autoComplete="current-password"
+                autoFocus
+                value={value}
+                onChange={(event) => {
+                  setValue(event.target.value);
+                  if (error) setError(false);
+                }}
+                placeholder="••••••••"
+                aria-invalid={error}
+                aria-describedby="gate-error"
+              />
+              <button
+                type="button"
+                className={styles.toggle}
+                onClick={() => setRevealed((v) => !v)}
+                aria-label={revealed ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+                aria-pressed={revealed}
+                aria-controls="gate-password"
+                title={revealed ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+              >
+                {revealed ? <EyeOffIcon /> : <EyeIcon />}
+              </button>
+            </div>
           </div>
           <p id="gate-error" className={styles.error} role="alert">
             {error ? "Mot de passe incorrect. Réessayez." : ""}
