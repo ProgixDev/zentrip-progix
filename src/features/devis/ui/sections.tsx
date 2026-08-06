@@ -115,7 +115,7 @@ export function BodySections() {
           <SectionHeader
             num="03 — INVESTISSEMENT"
             title="Votre investissement"
-            lead="Un montant total de 6 400 €, réglé en 8 versements mensuels de 800 €. Il comprend l’ensemble des prestations ci-dessous : développement complet, moteur IA, cartographie, infrastructure, déploiement sur les stores, accompagnement marketing de 90 jours, documentation et support."
+            lead="Un montant total de 6 400 €, réglé en 3 versements : 30 % à la signature, 50 % à la validation du planificateur et 20 % à la livraison. Il comprend l’ensemble des prestations ci-dessous : développement complet, moteur IA, cartographie, infrastructure, déploiement sur les stores, accompagnement marketing de 90 jours, documentation et support."
           />
           <div className={styles.tableWrap}>
             <table className={styles.table}>
@@ -143,7 +143,7 @@ export function BodySections() {
                 ))}
                 <tr className={styles.tableTotal}>
                   <td>
-                    <strong>TOTAL — 800 €/mois × 8 mois</strong>
+                    <strong>TOTAL — 30 % / 50 % / 20 %</strong>
                   </td>
                   <td className={styles.tableTotalAmount}>6 400 €</td>
                 </tr>
@@ -158,7 +158,7 @@ export function BodySections() {
               <div className={styles.totalEyebrow}>Investissement · montant total</div>
               <div className={styles.totalValue}>6 400 €</div>
               <div className={styles.totalNote}>
-                Réglé en <Strong>8 versements mensuels de 800 €</Strong>, développement complet,
+                Réglé en <Strong>3 versements — 30 %, 50 % et 20 %</Strong>, développement complet,
                 déploiement et accompagnement marketing compris. Prix ferme, aucun coût caché.
               </div>
             </div>
@@ -169,7 +169,7 @@ export function BodySections() {
             autoliquidation par le preneur le cas échéant).{" "}
             <Strong>Le montant de 6 400 € correspond au montant net à payer.</Strong>
           </InfoBox>
-          <SubHeading>Échéancier de paiement — 8 versements mensuels</SubHeading>
+          <SubHeading>Échéancier de paiement — 3 versements</SubHeading>
           <div className={styles.grid3} style={{ margin: "6px 0 16px" }}>
             {payments.map((p) => (
               <div key={p.pct} className={cn(styles.payCard, styles.lift)}>
@@ -181,9 +181,12 @@ export function BodySections() {
             ))}
           </div>
           <p style={{ fontSize: "13px", color: "var(--slate)", margin: 0, lineHeight: 1.6 }}>
-            Le montant total de <Strong>6 400 €</Strong> est réglé en{" "}
-            <Strong>8 versements mensuels de 800 €</Strong>. Paiement par <Strong>Stripe</Strong>,{" "}
-            <Strong>virement bancaire</Strong> ou <Strong>Interac</Strong> (si applicable).{" "}
+            Le montant total de <Strong>6 400 €</Strong> est réglé en <Strong>3 versements</Strong>{" "}
+            : <Strong>30 % (1 920 €) à la signature</Strong>,{" "}
+            <Strong>50 % (3 200 €) à la validation du planificateur</Strong> — fin de la phase 2 —
+            et <Strong>20 % (1 280 €) à la livraison</Strong>, après publication sur les stores.
+            Paiement par <Strong>Stripe</Strong>, <Strong>virement bancaire</Strong> ou{" "}
+            <Strong>Interac</Strong> (si applicable).{" "}
             <Strong>
               Aucun travail de développement ne débute avant réception du premier versement.
             </Strong>

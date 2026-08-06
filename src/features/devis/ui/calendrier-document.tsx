@@ -12,7 +12,7 @@ const coverBadges: ReadonlyArray<{ l: string; v: string; u: string }> = [
   { l: "Durée totale", v: "90", u: " j" },
   { l: "Phases", v: "4", u: "" },
   { l: "Sprints", v: "6", u: "" },
-  { l: "Paiement", v: "8", u: " mois" },
+  { l: "Versements", v: "3", u: " · 30 / 50 / 20 %" },
 ];
 
 const coverMeta: ReadonlyArray<{ l: string; v: string }> = [
@@ -28,7 +28,7 @@ const stats: ReadonlyArray<Stat> = [
   { n: "90", u: " jours", l: "de la conception à la mise en ligne" },
   { n: "4", u: "", l: "phases avec validation client" },
   { n: "6", u: "", l: "sprints de livraison itérative" },
-  { n: "6 400", u: " €", l: "montant total · 800 €/mois × 8 mois" },
+  { n: "6 400", u: " €", l: "montant total · 3 versements (30 / 50 / 20 %)" },
 ];
 
 const G_NV = "linear-gradient(90deg,var(--navy),var(--navy-700))";
@@ -311,24 +311,24 @@ const sprints: ReadonlyArray<Sprint> = [
 type Mile = { pct: string; nm: string; when: string; amt: string; trig: string };
 const miles: ReadonlyArray<Mile> = [
   {
-    pct: "MOIS 1 · 800 €",
+    pct: "30 % · À LA SIGNATURE",
     nm: "Démarrage",
-    when: "Analyse, architecture, sélection des services tiers et lancement du développement",
-    amt: "800 €",
+    when: "Phase 1 — cadrage, conception UI/UX, architecture et sélection des services tiers",
+    amt: "1 920 €",
     trig: "Déclenche le projet",
   },
   {
-    pct: "MOIS 2–5 · 800 €/MOIS",
-    nm: "Développement",
-    when: "Planificateur IA, profil véhicule, budget, checklist, carte interactive et copilote en voyage",
+    pct: "50 % · FIN DE PHASE 2 (J55)",
+    nm: "Validation du planificateur",
+    when: "Moteur IA, itinéraires et alternatives, profil véhicule, budget et checklist livrés et validés",
     amt: "3 200 €",
     trig: "Cœur du produit",
   },
   {
-    pct: "MOIS 6–8 · 800 €/MOIS",
-    nm: "Lancement & marketing",
-    when: "Back-office, tests, publication sur les stores et accompagnement marketing de 90 jours",
-    amt: "2 400 €",
+    pct: "20 % · À LA LIVRAISON (J90)",
+    nm: "Livraison & mise en ligne",
+    when: "Copilote en voyage, back-office, tests, publication sur les stores et formation",
+    amt: "1 280 €",
     trig: "Solde final",
   },
 ];
@@ -351,7 +351,7 @@ export function CalendrierDocument() {
           tag="Calendrier des sprints · Planning de réalisation"
           title="Le plan de"
           titleLight="livraison, sprint par sprint"
-          subtitle="Découpage détaillé de la réalisation de ZenTrip sur 90 jours — 4 phases et 6 sprints de livraison itérative, de la conception jusqu’à la publication sur les stores, suivis de 90 jours d’accompagnement marketing. Le montant total est réglé en 8 versements mensuels de 800 €."
+          subtitle="Découpage détaillé de la réalisation de ZenTrip sur 90 jours — 4 phases et 6 sprints de livraison itérative, de la conception jusqu’à la publication sur les stores, suivis de 90 jours d’accompagnement marketing. Le règlement s’effectue en trois versements adossés aux jalons du projet."
           badges={coverBadges}
           meta={coverMeta}
         />
@@ -375,7 +375,7 @@ export function CalendrierDocument() {
             <SectionHeader
               num="01 — VUE D’ENSEMBLE"
               title="Vue d’ensemble du planning"
-              lead="Le projet est livré de façon itérative sur 90 jours, en 4 phases de réalisation, jusqu’à la publication sur les stores — suivies d’une 5ᵉ phase de 90 jours d’accompagnement marketing. Le calendrier ci-dessous s’aligne sur les phases du devis, tandis que le montant total de 6 400 € est réglé en 8 versements mensuels de 800 €."
+              lead="Le projet est livré de façon itérative sur 90 jours, en 4 phases de réalisation, jusqu’à la publication sur les stores — suivies d’une 5ᵉ phase de 90 jours d’accompagnement marketing. Le calendrier ci-dessous s’aligne sur les phases du devis, et les trois versements sont adossés à ces jalons : 30 % à la signature, 50 % à la fin de la phase 2 et 20 % à la livraison."
             />
             <div
               style={{
@@ -659,10 +659,10 @@ export function CalendrierDocument() {
                   Les bornes en jours sont indicatives et peuvent glisser selon la rapidité des
                   validations client, les retours sur les interfaces et les contraintes liées aux
                   services tiers (intelligence artificielle, cartographie, météo, hébergements). Le
-                  démarrage (J1) correspond au premier versement mensuel et à la réunion de cadrage.
+                  démarrage (J1) correspond au premier versement de 30 % et à la réunion de cadrage.
                   Sprints de deux à trois semaines, avec une démo en fin de sprint. Le développement
-                  est livré en 90 jours, tandis que le montant total est réglé en 8 versements
-                  mensuels de 800 €.
+                  est livré en 90 jours, et le règlement suit les jalons du projet plutôt qu’un
+                  calendrier mensuel fixe.
                 </p>
               </div>
             </div>
@@ -984,7 +984,7 @@ export function CalendrierDocument() {
             <SectionHeader
               num="03 — JALONS"
               title="Jalons de paiement"
-              lead="Le montant total de 6 400 € est réglé en 8 versements mensuels de 800 €. Le développement de ZenTrip est livré en 90 jours."
+              lead="Le montant total de 6 400 € est réglé en 3 versements adossés aux jalons du projet : 30 % à la signature, 50 % à la validation du planificateur et 20 % à la livraison. Le développement de ZenTrip est livré en 90 jours."
             />
             <div
               style={{
@@ -1113,15 +1113,15 @@ export function CalendrierDocument() {
                     lineHeight: 1.55,
                   }}
                 >
-                  8 versements mensuels de 800 €, soit 6 400 € au total, comprenant le développement
-                  complet, le moteur d’intelligence artificielle, la cartographie, le déploiement
-                  sur les stores, l’accompagnement marketing de 90 jours, la documentation et le
-                  support. Paiement par Stripe, virement bancaire ou Interac (si applicable). Un
-                  budget publicitaire minimal de 2 200 € est à prévoir par le Client, distinct du
-                  présent devis et directement dépensé sur les plateformes publicitaires. Les
-                  abonnements aux services tiers (IA, cartographie, météo, hébergements) sont
-                  souscrits au nom du Client et sont également distincts du devis. Aucun
-                  développement ne débute avant réception du premier versement.
+                  3 versements — 30 % (1 920 €), 50 % (3 200 €) et 20 % (1 280 €) — soit 6 400 € au
+                  total, comprenant le développement complet, le moteur d’intelligence artificielle,
+                  la cartographie, le déploiement sur les stores, l’accompagnement marketing de 90
+                  jours, la documentation et le support. Paiement par Stripe, virement bancaire ou
+                  Interac (si applicable). Un budget publicitaire minimal de 2 200 € est à prévoir
+                  par le Client, distinct du présent devis et directement dépensé sur les
+                  plateformes publicitaires. Les abonnements aux services tiers (IA, cartographie,
+                  météo, hébergements) sont souscrits au nom du Client et sont également distincts
+                  du devis. Aucun développement ne débute avant réception du premier versement.
                 </p>
               </div>
             </div>

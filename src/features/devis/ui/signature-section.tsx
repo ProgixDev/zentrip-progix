@@ -198,7 +198,7 @@ export function SignatureSection() {
         <div className={styles.formuleRecap}>
           <span>Offre retenue :</span>
           <span className={styles.formuleRecapValue}>
-            ZenTrip — planification de road trip par IA · 6 400 € (800 €/mois × 8 mois)
+            ZenTrip — planification de road trip par IA · 6 400 € (30 % / 50 % / 20 %)
           </span>
         </div>
 

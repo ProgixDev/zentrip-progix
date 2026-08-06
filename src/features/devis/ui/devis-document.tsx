@@ -24,7 +24,7 @@ export function DevisDocument() {
         <SignatureSection />
         <Footer
           heading="Construisons le copilote de road trip que personne n’a encore fait"
-          text="Un montant ferme réglé sur 8 mois, une équipe senior, votre propriété à 100 % et 90 jours d’accompagnement marketing inclus. Il ne reste qu’à signer."
+          text="Un montant ferme réglé en trois versements, une équipe senior, votre propriété à 100 % et 90 jours d’accompagnement marketing inclus. Il ne reste qu’à signer."
         />
       </main>
       <ScrollReveal />

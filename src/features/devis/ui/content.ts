@@ -14,9 +14,10 @@ export const cover = {
   titleLight: "copilote de road trip par intelligence artificielle",
   subtitle:
     "ZenTrip : application mobile et web qui prépare, optimise et accompagne un road trip de bout en bout. À partir d’une simple description en langage naturel, l’application génère l’itinéraire complet, les étapes jour par jour, les hébergements, le budget prévisionnel, la checklist personnalisée et plusieurs alternatives comparées — puis accompagne le voyageur sur la route avec une carte interactive hors ligne, le suivi du véhicule et le carnet de voyage. Applications iOS et Android, application web, portail d’administration, infrastructure cloud et 90 jours d’accompagnement marketing inclus.",
+  // Aucun montant en couverture : le prix est traité en section 03 uniquement.
   badges: [
-    { l: "Investissement", v: "800 €", u: " /mois × 8 mois" },
     { l: "Délai de développement", v: "90", u: " jours" },
+    { l: "Supports livrés", v: "3", u: " — iOS, Android & web" },
     { l: "Accompagnement marketing", v: "90", u: " jours inclus" },
   ],
   meta: [
@@ -286,25 +287,25 @@ export const investment = [
   { text: "Documentation, formation & support", amount: "150 €", alt: true },
 ] as const;
 
-/** Section 03 — échéancier : 8 versements mensuels de 800 €, soit 6 400 €. */
+/** Section 03 — échéancier : 3 versements de 30 %, 50 % et 20 %, soit 6 400 €. */
 export const payments = [
   {
-    pct: "MENSUEL",
-    when: "Mois 1 à 8",
-    desc: "800 € par mois, sans variation",
-    amount: "800 €",
+    pct: "30 %",
+    when: "À la signature",
+    desc: "Déclenche le cadrage, la conception et le développement",
+    amount: "1 920 €",
   },
   {
-    pct: "DURÉE",
-    when: "Sur 8 mois",
-    desc: "Du démarrage au-delà du lancement",
-    amount: "8 mois",
+    pct: "50 %",
+    when: "À la validation du planificateur",
+    desc: "Fin de la phase 2 — moteur IA, itinéraires, budget et checklist livrés",
+    amount: "3 200 €",
   },
   {
-    pct: "TOTAL",
-    when: "6 400 € · sur 8 mois",
-    desc: "Forfait global",
-    amount: "6 400 €",
+    pct: "20 %",
+    when: "À la livraison",
+    desc: "Publication sur l’App Store et Google Play, mise en ligne et formation",
+    amount: "1 280 €",
   },
 ] as const;
 
@@ -319,7 +320,7 @@ export const formules = [
       "Développement complet de ZenTrip — planificateur de road trip par IA et copilote en voyage —, déploiement sur les stores et accompagnement marketing de 90 jours.",
     price: "6 400 €",
     priceUnit: "",
-    priceNote: "6 400 € · réglé sur 8 mois",
+    priceNote: "6 400 € · réglé en 3 versements (30 % / 50 % / 20 %)",
     points: [
       { b: "Applications mobiles & web voyageur", t: " + back-office d’administration" },
       { b: "Planificateur IA, carte hors ligne, budget OCR", t: " & carnet de voyage" },
