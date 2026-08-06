@@ -202,6 +202,10 @@ const sprints: ReadonlyArray<Sprint> = [
         " : dimensions, PTAC, réservoirs, évitement des ponts bas, limitations et routes interdites.",
       ),
       F(
+        "Base de véhicules pré-remplie",
+        " : catalogue de modèles sélectionnables, valeurs ajustables par le voyageur.",
+      ),
+      F(
         "Budget intelligent",
         " : prévisionnel détaillé, saisie des dépenses par photo (OCR + IA), comparaison prévu / réel.",
       ),
@@ -260,6 +264,10 @@ const sprints: ReadonlyArray<Sprint> = [
         " : rôles Organisateur, Copilote et Enfant, autorisations paramétrables, budget collaboratif et remboursements.",
       ),
       F(
+        "Partage de localisation en temps réel",
+        " : position des participants sur la carte, activable et désactivable, sur consentement.",
+      ),
+      F(
         "Mode Enfant (Explorateur)",
         " : suivi du trajet en temps réel, Carnet d’Explorateur, quiz, défis et badges.",
       ),
@@ -283,7 +291,7 @@ const sprints: ReadonlyArray<Sprint> = [
     feats: [
       F(
         "Portail web d’administration",
-        " : comptes, voyages, abonnements Stripe, suivi de la consommation des API et tableau de bord analytique.",
+        " : comptes, voyages, abonnements Stripe et paiements par voyage, suivi de la consommation des API et tableau de bord analytique.",
       ),
       F(
         "Tests qualité (QA)",

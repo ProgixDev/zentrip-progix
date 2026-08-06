@@ -470,10 +470,11 @@ export function BodySections() {
           <p className={styles.p}>
             L’Application est conçue dans le respect du <Strong>RGPD</Strong> pour le marché
             européen : minimisation des données collectées, consentement explicite pour
-            l’apprentissage des habitudes de voyage, sécurisation des données de localisation et des
-            documents photographiés. Le Client demeure <Strong>responsable de traitement</Strong> au
-            sens du règlement et assure la publication des mentions légales et de la politique de
-            confidentialité.
+            l’apprentissage des habitudes de voyage, sécurisation des documents photographiés. Le{" "}
+            <Strong>partage de localisation entre participants</Strong> est désactivé par défaut,
+            soumis à un consentement explicite et révocable à tout moment. Le Client demeure{" "}
+            <Strong>responsable de traitement</Strong> au sens du règlement et assure la publication
+            des mentions légales et de la politique de confidentialité.
           </p>
           <BadgeHeading badge="4">Intégralité de l’entente</BadgeHeading>
           <p className={styles.p}>

@@ -415,12 +415,20 @@ const modules: Module[] = [
         " : type, longueur (porte-vélos inclus), largeur, hauteur (galerie incluse), PTAC, consommation, carburant, capacité des réservoirs, autonomie, remorque.",
       ),
       F(
+        "Base de véhicules pré-remplie",
+        " : sélection d’un modèle existant (marque, gabarit, PTAC, réservoirs) pour éviter la saisie manuelle — chaque valeur reste ajustable par le voyageur.",
+      ),
+      F(
         "Évitement automatique des contraintes",
         " : ponts trop bas, limitations de hauteur et de poids, routes interdites aux poids lourds, rues trop étroites, parkings avec barres de hauteur.",
       ),
       F(
         "Calcul d’itinéraires compatibles",
         " avec le gabarit, intégré au moteur de planification et à la navigation.",
+      ),
+      F(
+        "Couverture du catalogue",
+        " : les principaux modèles de camping-cars, vans et fourgons aménagés au lancement, enrichi progressivement — la saisie manuelle reste toujours disponible pour un véhicule absent ou modifié.",
       ),
       F("", "Profil modifiable à tout moment et réutilisé automatiquement d’un voyage à l’autre."),
     ],
@@ -553,6 +561,10 @@ const modules: Module[] = [
         " : Organisateur (propriétaire du voyage, contrôle final), Copilote (préparation et suivi selon les droits accordés), Enfant / Explorateur (consultation uniquement).",
       ),
       F(
+        "Partage de localisation en temps réel",
+        " : position de chaque participant sur la carte du voyage — utile pour les groupes voyageant en plusieurs véhicules. Activable et désactivable à tout moment, sur consentement explicite.",
+      ),
+      F(
         "Mode Enfant (Explorateur)",
         " : progression du trajet en temps réel façon écran de suivi de vol, temps et kilomètres restants, programme de la journée.",
       ),
@@ -562,7 +574,7 @@ const modules: Module[] = [
       ),
       F(
         "Carnet de voyage automatique",
-        " : album, carte parcourue, statistiques, budget final, kilomètres parcourus — exportable en PDF.",
+        " : enregistrement du trajet réellement parcouru pendant le voyage, album, carte, statistiques, budget final, kilomètres — exportable en PDF.",
       ),
       F(
         "Partage",
@@ -585,7 +597,7 @@ const modules: Module[] = [
       ),
       F(
         "Abonnements & paiements Stripe",
-        " : version gratuite (itinéraire actif limité), forfaits payants, paiements récurrents, remboursements, conformité PCI. La participation à un voyage partagé reste gratuite.",
+        " : version gratuite (itinéraire actif limité), abonnement mensuel ou annuel et paiement à l’unité par voyage — les deux modèles cohabitent. Paiements récurrents, remboursements, conformité PCI. La participation à un voyage partagé reste gratuite.",
       ),
       F(
         "API sécurisée & base de données dédiée",
@@ -1368,8 +1380,9 @@ export function CahierDocument() {
                     </td>
                     <td style={TD_NB}>
                       API sécurisée et base dédiée : comptes, profils voyageur et véhicule, voyages
-                      sauvegardés, étapes, budgets, checklists, dépenses et historique — sauvegardes
-                      automatiques et conformité RGPD.
+                      sauvegardés, étapes, budgets, checklists, dépenses et historique — plus un
+                      catalogue de véhicules pré-remplis et un canal temps réel pour le partage de
+                      localisation. Sauvegardes automatiques et conformité RGPD.
                     </td>
                   </tr>
                   <tr>
@@ -1377,8 +1390,9 @@ export function CahierDocument() {
                       <Strong>Abonnements & paiement</Strong>
                     </td>
                     <td style={TD_NB_ALT}>
-                      Intégration Stripe : version gratuite, forfaits payants, paiements récurrents,
-                      remboursements, conformité PCI.
+                      Intégration Stripe : version gratuite, abonnement mensuel ou annuel et
+                      paiement à l’unité par voyage, paiements récurrents, remboursements,
+                      conformité PCI.
                     </td>
                   </tr>
                   <tr>

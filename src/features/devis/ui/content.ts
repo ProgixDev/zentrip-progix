@@ -45,6 +45,10 @@ export const incl1 = [
     t: " : type, longueur (porte-vélos inclus), largeur, hauteur (galerie incluse), PTAC, consommation, carburant, réservoirs eau et gaz, autonomie, remorque",
   },
   {
+    b: "Base de véhicules pré-remplie",
+    t: " : sélection d’un modèle existant (marque, gabarit, PTAC, réservoirs) pour éviter la saisie manuelle — chaque valeur reste ajustable",
+  },
+  {
     b: "Création d’un voyage en langage naturel",
     t: " : l’IA extrait la destination, la durée, le budget, les préférences et les contraintes, et pose les questions complémentaires manquantes",
   },
@@ -178,12 +182,16 @@ export const incl6 = [
     t: " : rôles Organisateur, Copilote et Enfant (Explorateur), autorisations paramétrables et validation des modifications par l’organisateur",
   },
   {
+    b: "Partage de localisation en temps réel",
+    t: " : position de chaque participant sur la carte du voyage, activable et désactivable à tout moment, sur consentement explicite",
+  },
+  {
     b: "Mode Enfant (Explorateur)",
     t: " : suivi du trajet en temps réel façon écran de vol, programme du jour, Carnet d’Explorateur avec anecdotes, quiz, défis d’observation et badges — entièrement consultatif",
   },
   {
     b: "Carnet de voyage généré automatiquement",
-    t: " : album, carte parcourue, statistiques, budget final, kilomètres parcourus, export PDF et partage sur les réseaux sociaux (volet souvenir uniquement)",
+    t: " : enregistrement du trajet réellement parcouru, album, carte, statistiques, budget final, kilomètres, export PDF et partage sur les réseaux sociaux (volet souvenir uniquement)",
   },
 ] as const;
 
@@ -214,7 +222,7 @@ export const incl7 = [
   },
   {
     b: "Abonnements & paiements Stripe",
-    t: " : version gratuite, forfaits payants, paiements récurrents, gestion des remboursements, conformité PCI",
+    t: " : version gratuite, abonnement mensuel ou annuel, paiement à l’unité par voyage, paiements récurrents, gestion des remboursements, conformité PCI",
   },
   {
     b: "Publication App Store & Google Play",
@@ -258,14 +266,22 @@ export const investment = [
   },
   { text: "Application web (planificateur & carnet de voyage)", amount: "700 €", alt: false },
   {
-    text: "Cartographie, calcul d’itinéraires hors gabarit & mode hors ligne",
+    text: "Cartographie, itinéraires hors gabarit, mode hors ligne & partage de localisation",
     amount: "650 €",
     alt: true,
   },
   { text: "Modules budget (OCR), checklist & entretien du véhicule", amount: "600 €", alt: false },
-  { text: "API, base de données & infrastructure cloud", amount: "550 €", alt: true },
+  {
+    text: "API, base de données (dont catalogue véhicules) & infrastructure cloud",
+    amount: "550 €",
+    alt: true,
+  },
   { text: "Back-office d’administration", amount: "450 €", alt: false },
-  { text: "Abonnements Stripe & déploiement sur les stores", amount: "250 €", alt: true },
+  {
+    text: "Abonnements, paiement par voyage & déploiement sur les stores",
+    amount: "250 €",
+    alt: true,
+  },
   { text: "Accompagnement marketing 90 jours", amount: "250 €", alt: false },
   { text: "Documentation, formation & support", amount: "150 €", alt: true },
 ] as const;
