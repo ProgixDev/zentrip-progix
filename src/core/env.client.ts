@@ -13,6 +13,13 @@ const clientEnvSchema = z.object({
 });
 
 // NEXT_PUBLIC_* must be referenced statically for Next.js to inline them.
+//
+// `.default()` only fires on `undefined`. A hosting provider that declares the
+// variable without a value hands us "" instead, which slips past the default and
+// then fails `.min(1)`, breaking the build. Normalising blank to `undefined`
+// keeps the fallback working: an empty gate code is never a meaningful value.
+const rawAccessCode = process.env.NEXT_PUBLIC_SITE_ACCESS_CODE;
+
 export const clientEnv = clientEnvSchema.parse({
-  NEXT_PUBLIC_SITE_ACCESS_CODE: process.env.NEXT_PUBLIC_SITE_ACCESS_CODE,
+  NEXT_PUBLIC_SITE_ACCESS_CODE: rawAccessCode?.trim() ? rawAccessCode : undefined,
 });
